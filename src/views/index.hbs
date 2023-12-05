@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Events List</h1>
+        <div class="row">
+            {{#each events}}
+            <div class="col-lg-3 mb-4">
+                <div class="card border-0 rounded">
+                    {{#if img}}
+                    <img class="card-img-top rounded" src="{{img}}" alt="img" style="width: 100%; height: 200px; object-fit: cover;">
+                    {{/if}}
+                    <div class="card-body">
+                        <h3 class="card-title pt-2 pb-2">
+                            <a href="/event/{{_id}}">{{title}}</a>
+                        </h3>
+                        <p class="card-text pt-2">{{description}}</p>
+                        <p class="card-text pt-2">🗺️ {{location}}</p>
+                        <p class="card-text">Created at {{dateCreated}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+</html>
