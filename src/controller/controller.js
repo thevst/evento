@@ -33,7 +33,7 @@ const createEvent = async (req, res) => {
   try {
     const { title, description, location, img } = req.body
 
-    if (!title || !description || title.length < 3 || description.length < 3) {
+    if (!title || !description || !location || title.length < 3 || description.length < 3 || location.length < 3) {
       return res.status(400).json({
         statusCode: 400,
         message: 'Bad input parameters!',
