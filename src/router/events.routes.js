@@ -9,9 +9,9 @@ const {
 } = require('../controller/controller')
 
 router.get('/', getAllEvents)
-router.get('/:id', getEventById)
+router.get('/event/:id', getEventById)
 router.post('/', createEvent)
-router.put('/:id', updateEvent)
-router.delete('/:id', deleteEvent)
+router.put('/event/:id', updateEvent)
+router.delete('/event/:id', deleteEvent)
 
 module.exports = router
